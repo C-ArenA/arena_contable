@@ -8,5 +8,6 @@
 </head>
 <body>
     <a href="./journal">Libro Diario</a>
+    <a href="./currencies">Monedas</a>
 </body>
 </html>
