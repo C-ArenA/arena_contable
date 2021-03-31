@@ -19,6 +19,7 @@
 <body>
     <header><a href="./">HOME</a></header>
     <h1>Monedas</h1>
+    <button id="refresh">Refresh Rates</button>
     <h2>Monedas Activas</h2>
     <table>
         <tr>
@@ -40,14 +41,17 @@
     <table>
         <tr>
             <th>Código de Moneda</th>
+            <th>Valor relativo al BOB</th>
         </tr>
         @foreach ($currencies as $currency)
         @if ($currency->being_used == 0)
         <tr>
             <td>{{$currency->code}}</td>
+            <td>{{$currency->rate}}</td>
         </tr>
         @endif
         @endforeach
     </table>
+    <script src="{{ asset('js/currencies/postRates.js') }}"></script>
 </body>
 </html>
