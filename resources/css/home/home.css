@@ -1,0 +1,23 @@
+.home {
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.home-logo{
+    width: 30%;
+    max-width: 400px;
+    margin: 40px;
+}
+
+.home-title {
+    font-size: 3rem;
+    color: var(--col-arena-heavy);
+}
+.home-text {
+    font-size: 2rem;
+}
+.home-message {
+    margin-top: 10vh;
+    font-weight: 700;
+}

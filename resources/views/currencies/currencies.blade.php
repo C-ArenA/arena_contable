@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Monedas</title>
-    <style>
-        th, td{
-            margin: 10px;
-            padding: 10px;
-            outline-style: solid;
-            outline-width: 2px;
-            outline-color: #c7c7c7;
-        }
+@extends('layouts.dashboard')
+@section('title', 'Currencies')
+@push('styles')
+<style>
+    th, td{
+        margin: 10px;
+        padding: 10px;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: #c7c7c7;
+    }
 
-    </style>
-</head>
-<body>
+
+</style>
+@endpush
+@section('content')
+<div class="curr">
     <header><a href="./">HOME</a></header>
     <h1>Monedas</h1>
     <button id="refresh">Refresh Rates</button>
@@ -52,6 +50,8 @@
         @endif
         @endforeach
     </table>
+</div>
+@push('scripts')
     <script src="{{ asset('js/currencies/postRates.js') }}"></script>
-</body>
-</html>
+@endpush
+@endsection

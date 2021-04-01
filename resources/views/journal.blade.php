@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Libro-Diario</title>
-</head>
-<body>
-    <p>Bienvenido</p>
-</body>
-</html>
+@extends('layouts.dashboard')
+@section('title', 'Libro Diario ')
+@push('styles')
+    <style>
+        .card{
+            width: 60vw;
+        }
+    </style>
+@endpush
+@section('content')
+<div class="card">
+    <x-table ></x-table>
+</div>
+@endsection
+@push('scripts')
+    <script src="{{ asset('js/currencies/postRates.js') }}"></script>
+@endpush

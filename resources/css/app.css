@@ -1,2 +1,73 @@
 @import '~normalize.css/normalize.css';
 @import '~minireset.css/minireset.css';
+
+/* russo-one-regular - latin */
+@font-face {
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/russo-one-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/russo-one-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* quicksand-regular - latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/quicksand-v22-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/quicksand-v22-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* quicksand-500 - latin */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/quicksand-v22-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/quicksand-v22-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* quicksand-700 - latin */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/quicksand-v22-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/quicksand-v22-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+:root {
+    /* Colors */
+    --col-arena-back: #F2F2F2;
+    --col-arena-text: #314451;
+    --col-arena-high: #F49800;
+    --col-arena-heavy: #11181C;
+    --col-arena-light: #314451;
+    --col-arena-oppo-text: #F2F2F2;
+    --col-arena-cards: #FFFFFF;
+    /* Fonts */
+    --font-big: 'Russo One', Arial;
+    --font-main: 'Quicksand', sans-serif
+}
+
+html {
+    box-sizing: border-box;
+    background-color: var(--col-arena-back);
+    color: var(--col-arena-text);
+    font-size: 20px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-big);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    font-family: var(--font-main);
+}
+

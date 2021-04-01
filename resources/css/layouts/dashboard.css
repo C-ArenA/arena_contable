@@ -1,0 +1,93 @@
+:root {
+    --dashboard-nav-width: 300px;
+    --dashboard-nav-options-height: 40vh;
+}
+
+.dashboard-title {
+    width: var(--dashboard-nav-width);
+    min-width: 200px;
+    height: 19vh;
+    background-color: var(--col-arena-light);
+    padding: 1vw 1vw;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dashboard-title__logo {
+    /* max-width: calc(var(--dashboard-nav-width) * 0.3); */
+    width: 50%;
+    max-width: 10vh;
+    margin: auto;
+}
+.dashboard-title__text {
+    color: var(--col-arena-oppo-text);
+    font-size: calc(var(--dashboard-nav-width) * 0.05);
+}
+
+.dashboard-nav {
+    width: var(--dashboard-nav-width);
+    position: absolute;
+    top: 19.5vh;
+    font-family: var(--font-main);
+    font-weight: 500;
+
+}
+.dashboard-nav__main, .dashboard-nav__accounts {
+    background-color: var(--col-arena-heavy);
+    text-align: center;
+    height: var(--dashboard-nav-options-height);
+    padding: 5vh 10px;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.dashboard-nav__main {
+    margin-bottom: .5vh;
+}
+.dashboard-nav__link {
+    color: var(--col-arena-oppo-text);
+    margin: 10px;
+    height: 6vh;
+}
+.dashboard-nav__button {
+    background-color: var(--col-arena-high);
+    color: var(--col-arena-oppo-text);
+    font-family: var(--font-big);
+    text-align: center;
+    padding: 15px 10px;
+    position: absolute;
+    width: 60%;
+    top: calc(var(--dashboard-nav-options-height) - 1.3rem);
+    left: 20%;
+    border-radius: 10px;
+}
+
+.dash-main {
+    margin-left: var(--dashboard-nav-width);
+    height: 100vh;
+    width: calc(100vw - --dashboard-nav-width);
+    padding: 20px;
+}
+
+.dash-content {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.dashboard-nav__link:hover{
+    background-color: black;
+}
+.dashboard-nav__link a {
+    display: block;
+    height: 100%;
+    padding: 1.8vh;
+}
+.dashboard-nav__accounts::-webkit-scrollbar, .dashboard-nav__main::-webkit-scrollbar {
+    display: none;
+}
+
+.dashboard-nav__link--selected {
+    background-color: black;
+}

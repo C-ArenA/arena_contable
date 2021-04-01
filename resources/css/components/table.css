@@ -1,0 +1,28 @@
+.x-table__container {
+    background-color: cyan;
+    outline-style: dashed;
+}
+.x-table {
+    width: 100%;
+    background-color: white;
+}
+.x-table__htext {
+    font-family: var(--font-big);
+    text-align: center;
+
+}
+.x-table__content {
+    font-family: var(--font-main);
+    text-align: center;
+
+}
+.x-table__header{
+    height: 2.5rem;
+}
+.x-table__item {
+    background-color: var(--col-arena-back);
+    height: 3rem;
+    border-style: solid;
+    border-color: white;
+    border-width: .5rem;
+}
