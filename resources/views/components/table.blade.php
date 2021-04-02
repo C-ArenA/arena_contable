@@ -8,25 +8,29 @@
     @endpush
     @endonce
     <!-- Because you are alive, everything is possible. - Thich Nhat Hanh -->
+
     <table class="x-table">
         <thead>
             <tr class="x-table__header">
-                <th class="x-table__htext">Col1</th>
-                <th class="x-table__htext">Col2</th>
-                <th class="x-table__htext">Col3</th>
+                @foreach ($headerArray as $hcol)
+                <th class="x-table__htext">{{$hcol}}</th>
+                @endforeach
             </tr>
         </thead>
-        <tbody>
+
+        <tbody >
+
+            @foreach ($contentDBArray as $row)
+            @if ($where())
             <tr class="x-table__item">
-                <td class="x-table__content">cont11</td>
-                <td class="x-table__content">cont12</td>
-                <td class="x-table__content">cont13</td>
+                @foreach ($row as $col)
+                <td class="x-table__content">{{$col}}</td>
+                @endforeach
             </tr>
-            <tr class="x-table__item">
-                <td class="x-table__content">cont11</td>
-                <td class="x-table__content">cont12</td>
-                <td class="x-table__content">cont13</td>
-            </tr>
+            @endif
+            @endforeach
+
         </tbody>
+
     </table>
 </div>

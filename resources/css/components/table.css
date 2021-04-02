@@ -1,6 +1,5 @@
 .x-table__container {
-    background-color: cyan;
-    outline-style: dashed;
+
 }
 .x-table {
     width: 100%;
@@ -22,7 +21,12 @@
 .x-table__item {
     background-color: var(--col-arena-back);
     height: 3rem;
-    border-style: solid;
-    border-color: white;
+    border-style: solid hidden;
+    border-color: #fff;
     border-width: .5rem;
+}
+
+.x-table__body {
+    overflow: scroll;
+    height: 50vh;
 }

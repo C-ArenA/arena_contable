@@ -3,7 +3,8 @@
 @push('styles')
     <style>
         .card{
-            width: 60vw;
+            width: 40vw;
+            padding: 20px
         }
     </style>
 @endpush
