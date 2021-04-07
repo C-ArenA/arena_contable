@@ -21,3 +21,5 @@ Route::get('journal', function () {
 });
 
 Route::get('currencies', [CurrenciesController::class, 'index']);
+Route::put('currencies', [CurrenciesController::class, 'update']);
+

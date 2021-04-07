@@ -12,10 +12,12 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/currencies/postRates.js', 'public/js/currencies')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ])
     .css('resources/css/layouts/dashboard.css', 'public/css/layouts')
     .css('resources/css/home/home.css', 'public/css/home')
     .css('resources/css/components/table.css', 'public/css/components')
+    .css('resources/css/components/button.css', 'public/css/components')
     .setResourceRoot('../');

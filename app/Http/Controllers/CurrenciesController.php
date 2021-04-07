@@ -13,4 +13,15 @@ class CurrenciesController extends Controller
         $header = ['Código', 'Bs.', 'Símbolo', 'Estado'];
         return view('currencies.currencies', ['currencies' => $currencies, 'headerArray' => $header]);
     }
+    public function update(Request $request)
+    {
+        $newCurrencies = json_decode($request->input("newCurrencies"), true);
+        foreach ($newCurrencies as $key => $value) {
+            DB::update('update currencies set rate = '.$value.' where code = ?', [$key]);
+        }
+        return back();
+        // return dd($newCurrencies);
+        // return $request->all();
+        // return "Hola";
+    }
 }

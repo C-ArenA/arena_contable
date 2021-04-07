@@ -1,5 +1,12 @@
 .x-table__container {
 
+    overflow:auto;
+    position:relative;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.x-table__container::-webkit-scrollbar{
+    display: none;
 }
 .x-table {
     width: 100%;
@@ -8,11 +15,18 @@
 .x-table__htext {
     font-family: var(--font-big);
     text-align: center;
-
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    height: 2.5rem;
 }
 .x-table__content {
     font-family: var(--font-main);
     text-align: center;
+
+}
+.x-table__head{
 
 }
 .x-table__header{
@@ -25,8 +39,18 @@
     border-color: #fff;
     border-width: .5rem;
 }
-
-.x-table__body {
-    overflow: scroll;
-    height: 50vh;
+.x-table__item:hover {
+    background-color: var(--col-arena-light);
+    color: white;
+    cursor: pointer;
+}
+.x-table__item:active{
+    background-color: var(--col-arena-heavy);
+}
+/* .x-table__content:hover {
+    background-color: var(--col-arena-heavy);
+} */
+.x-table__item-selected {
+    background-color: var(--col-arena-heavy);
+    color: #fff;
 }

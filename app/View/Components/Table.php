@@ -47,4 +47,10 @@ class Table extends Component
     public function where($condition = true){
         return $condition;
     }
+    public function findID($row)
+    {
+        foreach ($row as $key => $value) {
+            return $value;
+        }
+    }
 }

@@ -1,0 +1,9 @@
+.x-button{
+    background-color: var(--col-arena-high);
+    color: var(--col-arena-oppo-text);
+    font-family: var(--font-big);
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border-style: none;
+}

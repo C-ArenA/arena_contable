@@ -3,7 +3,7 @@
 @push('styles')
     <link rel="stylesheet" href="{{asset('css/home/home.css')}}">
 @endpush
-@section('content1')
+@section('content')
 <div class="home">
     <img class="home-logo" src="{{asset('img/logoBlack.png')}}" alt="">
     <h2 class="home-title">ArenA Contable</h2>

@@ -5,31 +5,18 @@
 @endpush
 @section('content')
 <div class="curr">
-    <header><a href="./">HOME</a></header>
     <h1>Monedas</h1>
-    <button id="refresh">Refresh Rates</button>
-    <h2>Monedas Activas</h2>
+    <x-table :headerArray="['Código', 'Bs.', 'Símbolo', 'En Uso']"
+            :contentDBArray="$currencies"
+            style="width:30vw; height:80vh;"></x-table>
+    <form action="./currencies" method="post">
+        @csrf
+        @method("PUT")
+        <input type="text" name="access_key" id="accessKey" placeholder="API Key data.fixer.io" required value={{$_ENV['API_KEY_DATA_FIXER']}}>
+        <x-button id="refreshButton">Actualizar Monedas en Base a: 'BOB'</x-button>
+        <input type="hidden" name="newCurrencies" id="newCurrenciesField">
+    </form>
 
-    <table>
-        <tr>
-            <th>Código de Moneda</th>
-            <th>Valor relativo al BOB</th>
-            <th>Símbolo</th>
-        </tr>
-        @foreach ($currencies as $currency)
-        @if ($currency->being_used > 0)
-        <tr>
-            <td>{{$currency->code}}</td>
-            <td>{{$currency->rate}}</td>
-            <td>{{$currency->symbol}}</td>
-        </tr>
-        @endif
-        @endforeach
-    </table>
-    <h2>Monedas inactivas</h2>
-    <div style="width: 30vw; padding:10px;">
-        <x-table :headerArray="['Código', 'Bs.', 'Símbolo']" :contentDBArray="$currencies"></x-table>
-    </div>
 </div>
 @push('scripts')
     <script src="{{ asset('js/currencies/postRates.js') }}"></script>
