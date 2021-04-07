@@ -14,6 +14,8 @@
 }
 .x-table__htext {
     font-family: var(--font-big);
+    font-weight: 100;
+    font-size: .9rem;
     text-align: center;
     position: sticky;
     top: 0;
@@ -24,7 +26,8 @@
 .x-table__content {
     font-family: var(--font-main);
     text-align: center;
-
+    font-size: .9rem;
+    font-weight: 400;
 }
 .x-table__head{
 
@@ -34,7 +37,8 @@
 }
 .x-table__item {
     background-color: var(--col-arena-back);
-    height: 3rem;
+    height: 2.5rem;
+
     border-style: solid hidden;
     border-color: #fff;
     border-width: .5rem;
