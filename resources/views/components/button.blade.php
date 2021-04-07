@@ -6,5 +6,5 @@
 
     @endpush
 @endonce
-@props(['onclick'=>"", "id"=>""])
+@props(['onclick'=>"void()", "id"=>"defaultButton"])
 <button id={{$id}} class="x-button" onclick={{$onclick}} type="button">{{$slot}}</button>

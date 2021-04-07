@@ -48,12 +48,10 @@
     <x-table :headerArray="['Código', 'Bs.', 'Símbolo', 'En Uso']"
             :contentDBArray="$currencies"
             style="width:30vw; height:60vh;"></x-table>
-    <form action="./currencies" method="post">
+    <form action="./currencies" method="POST">
         @csrf
         @method("PUT")
-        <input type="text" name="access_key" id="accessKey" placeholder="API Key data.fixer.io" required value={{$_ENV['API_KEY_DATA_FIXER']}}>
-        <x-button id="refreshButton">Actualizar Monedas en Base a: 'BOB'</x-button>
-        <input type="hidden" name="newCurrencies" id="newCurrenciesField">
+        <x-button onclick="this.form.submit();">Actualizar Tipos de Cambio</x-button>
     </form>
     </div>
     <div class="card check-curr">
