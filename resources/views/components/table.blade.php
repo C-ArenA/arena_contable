@@ -23,8 +23,14 @@
             @foreach ($contentDBArray as $row)
             @if ($where())
             <tr class="x-table__item" id={{$findID($row)}}>
-                @foreach ($row as $col)
-                <td class="x-table__content">{{$col}}</td>
+                @foreach ($row as $colName => $col)
+                @if ($isToggleColumn($colName))
+                    {{-- <td class="x-table__content">{{$col? "YES":"NO"}}</td> --}}
+                    <td class="x-table__content"><x-toggle :status="$col"></x-toggle></td>
+
+                @else
+                    <td class="x-table__content">{{$col}}</td>
+                @endif
                 @endforeach
             </tr>
             @endif

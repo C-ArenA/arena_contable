@@ -29,9 +29,7 @@
     font-size: .9rem;
     font-weight: 400;
 }
-.x-table__head{
 
-}
 .x-table__header{
     height: 2.5rem;
 }
@@ -46,7 +44,7 @@
 .x-table__item:hover {
     background-color: var(--col-arena-light);
     color: white;
-    cursor: pointer;
+    cursor: cell;
 }
 .x-table__item:active{
     background-color: var(--col-arena-heavy);
@@ -57,4 +55,7 @@
 .x-table__item-selected {
     background-color: var(--col-arena-heavy);
     color: #fff;
+}
+.x-table__content-toggle:hover {
+    cursor: pointer;
 }

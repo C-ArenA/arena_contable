@@ -1,5 +1,5 @@
 <?php
-
+// In order to seed run php artisan db:seed --class=CurrencySeeder
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;

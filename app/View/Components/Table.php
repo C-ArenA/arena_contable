@@ -14,7 +14,7 @@ class Table extends Component
 {
     public $headerArray;
     public $contentDBArray;
-
+    public $toggleColumns;
     /**
      * Create a new component instance.
      *
@@ -22,7 +22,8 @@ class Table extends Component
      */
     public function __construct(
         $headerArray = ["col1", "col2", "col3"],
-        $contentDBArray = false)
+        $contentDBArray = false,
+        $toggleColumnsArray = [])
     {
         // =[['a','b','c'],['a','b','c']]
         $row1 = new MyRow();
@@ -31,7 +32,7 @@ class Table extends Component
         $this->contentDBArray = $contentDBArray?
             $contentDBArray :
             [$row1, $row2] ;
-
+        $this->toggleColumns = $toggleColumnsArray;
     }
 
     /**
@@ -52,5 +53,14 @@ class Table extends Component
         foreach ($row as $key => $value) {
             return $value;
         }
+    }
+    public function isToggleColumn($columnName)
+    {
+        foreach ($this->toggleColumns as $column) {
+            if ($column == $columnName) {
+                return true;
+            }
+        }
+        return false;
     }
 }

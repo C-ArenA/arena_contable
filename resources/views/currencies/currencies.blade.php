@@ -47,6 +47,7 @@
     <h2>Todas las monedas</h2>
     <x-table :headerArray="['Código', 'Bs.', 'Símbolo', 'En Uso']"
             :contentDBArray="$currencies"
+            :toggleColumnsArray="['being_used']"
             style="width:30vw; height:60vh;"></x-table>
     <form action="./currencies" method="POST">
         @csrf

@@ -13,10 +13,8 @@
         "axios": "^0.21.1",
         "laravel-mix": "^6.0.13",
         "lodash": "^4.17.21",
-        "postcss": "^8.2.9"
-    },
-    "dependencies": {
         "minireset.css": "0.0.7",
-        "normalize.css": "8.0.1"
+        "normalize.css": "8.0.1",
+        "postcss": "^8.2.9"
     }
 }
