@@ -1,72 +1,35 @@
 @extends('layouts.dashboard')
 @section('title', 'Currencies')
 @push('styles')
-    <style>
-        .curr {
-            display: grid;
-            grid-template-columns: .8fr 1.2fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 15px 15px;
-            margin: 20px 0 10px 0;
-        }
-        .card {
-            background-color: var(--col-arena-cards);
-            /* width: fit-content; */
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0px 1px 20px -1px #31445190;
-
-        }
-        .card input {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            font-family: var(--font-main);
-            background-color: var(--col-arena-back);
-            color: var(--col-arena-heavy);
-            border-width: 1px;
-            padding: 10px;
-            border-radius: 8px;
-
-        }
-        .card h2 {
-            font-family: var(--font-main);
-            font-weight: 700;
-            margin: 0 0 20px 0;
-        }
-        .all-curr { grid-area: 1 / 1 / 3 / 2; }
-        .check-curr { grid-area: 1 / 2 / 2 / 3; }
-        .update-curr { grid-area: 2 / 2 / 3 / 3; }
-    </style>
-
+    <link rel="stylesheet" href="{{asset('css/currencies/currencies.css')}}">
 @endpush
 @section('content')
-<h1>Monedas</h1>
+<h1 class="curr-title">Monedas</h1>
 <div class="curr">
-    <div class="card all-curr">
-    <h2>Todas las monedas</h2>
-    <x-table :headerArray="['Código', 'Bs.', 'Símbolo', 'En Uso']"
-            :contentDBArray="$currencies"
-            :toggleColumnsArray="['being_used']"
-            style="width:30vw; height:60vh;"></x-table>
-    <form action="./currencies" method="POST">
-        @csrf
-        @method("PUT")
-        <x-button onclick="this.form.submit();">Actualizar Tipos de Cambio</x-button>
-    </form>
-    </div>
-    <div class="card check-curr">
+    <x-card class="all-curr">
+        <h2>Todas las monedas</h2>
+        <x-table :headerArray="['Código', 'Bs.', 'Símbolo', 'En Uso']"
+                :contentDBArray="$currencies"
+                :toggleColumnsArray="['being_used']"
+                style="width:30vw; height:60vh;"></x-table>
+        <form action="./currencies" method="POST">
+            @csrf
+            @method("PUT")
+            <x-button onclick="this.form.submit();">Actualizar Tipos de Cambio</x-button>
+        </form>
+    </x-card>
+    <x-card class="check-curr">
         <h2>Monedas activas</h2>
         <x-table></x-table>
-    </div>
-    <div class="card update-curr">
+    </x-card>
+    <x-card class="update-curr">
         <h2>Editar Moneda</h2>
         <form action="./currencies" method="post">
             @csrf
             @method('PUT')
             <input type="text" name="newSymbol" id="newSymbol">
         </form>
-    </div>
+    </x-card>
 </div>
 @push('scripts')
     <script src="{{ asset('js/currencies/postRates.js') }}"></script>

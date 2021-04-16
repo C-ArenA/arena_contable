@@ -66,12 +66,11 @@
 .dash-main {
     margin-left: var(--dashboard-nav-width);
     height: 100vh;
-    width: calc(100vw - --dashboard-nav-width);
+    width: calc(100vw - var(--dashboard-nav-width));
     padding: 20px;
 }
 
 .dash-content {
-    
     height: 100%;
     width: 100%;
     overflow: auto;

@@ -2,8 +2,10 @@
     "/js/app.js": "/js/app.js",
     "/js/currencies/postRates.js": "/js/currencies/postRates.js",
     "/css/app.css": "/css/app.css",
-    "/css/components/button.css": "/css/components/button.css",
     "/css/components/table.css": "/css/components/table.css",
+    "/css/currencies/currencies.css": "/css/currencies/currencies.css",
     "/css/home/home.css": "/css/home/home.css",
-    "/css/layouts/dashboard.css": "/css/layouts/dashboard.css"
+    "/css/layouts/dashboard.css": "/css/layouts/dashboard.css",
+    "/css/components/card.css": "/css/components/card.css",
+    "/css/components/button.css": "/css/components/button.css"
 }

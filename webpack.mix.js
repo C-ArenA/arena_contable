@@ -16,8 +16,12 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ])
+    // Views' Styles
     .css('resources/css/layouts/dashboard.css', 'public/css/layouts')
     .css('resources/css/home/home.css', 'public/css/home')
+    .css('resources/css/currencies/currencies.css', 'public/css/currencies')
+    // Components' Styles
     .css('resources/css/components/table.css', 'public/css/components')
     .css('resources/css/components/button.css', 'public/css/components')
+    .css('resources/css/components/card.css', 'public/css/components')
     .setResourceRoot('../');

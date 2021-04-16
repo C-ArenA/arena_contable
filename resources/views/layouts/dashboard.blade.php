@@ -43,11 +43,11 @@
 
     </nav>
     <main class="dash-main">
-        <div class="dash-content">
+        {{-- <div class="dash-content"> --}}
         @section('content')
             <p>Pon algo aquí</p>
         @show
-        </div>
+        {{-- </div> --}}
     </main>
 
     @stack('scripts')

@@ -9,9 +9,7 @@
     </style>
 @endpush
 @section('content')
-<div class="card">
-    <x-table ></x-table>
-</div>
+<x-card><x-table ></x-table></x-card>
 @endsection
 @push('scripts')
     <script src="{{ asset('js/currencies/postRates.js') }}"></script>
