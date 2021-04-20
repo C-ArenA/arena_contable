@@ -10,7 +10,7 @@
     background-color: var(--col-arena-light);
     padding: 1vw 1vw;
     text-align: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -27,8 +27,10 @@
 
 .dashboard-nav {
     width: var(--dashboard-nav-width);
-    position: absolute;
+    position: fixed;
+    height: 81vh;
     top: 19.5vh;
+    left: 0;
     font-family: var(--font-main);
     font-weight: 500;
 
@@ -67,14 +69,13 @@
     margin-left: var(--dashboard-nav-width);
     height: 100vh;
     width: calc(100vw - var(--dashboard-nav-width));
-    padding: 20px;
+    padding: 1rem 1rem 0 1rem;
+    overflow: auto;
+    min-height: 580px;
+    outline-style: dashed;
+    outline-offset: -5px;
 }
 
-.dash-content {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-}
 .dashboard-nav__link:hover{
     background-color: black;
 }
@@ -89,4 +90,17 @@
 
 .dashboard-nav__link--selected {
     background-color: black;
+}
+
+@media (max-width: 900px) {
+    .dashboard-nav {
+        width: var(--dashboard-nav-width);
+        position: fixed;
+        height: 81vh;
+        top: 19.5vh;
+        left: 0;
+        font-family: var(--font-main);
+        font-weight: 500;
+
+    }
 }

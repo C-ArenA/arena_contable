@@ -15,6 +15,7 @@ class Table extends Component
     public $headerArray;
     public $contentDBArray;
     public $toggleColumns;
+    public $condition;
     /**
      * Create a new component instance.
      *
@@ -23,7 +24,8 @@ class Table extends Component
     public function __construct(
         $headerArray = ["col1", "col2", "col3"],
         $contentDBArray = false,
-        $toggleColumnsArray = [])
+        $toggleColumnsArray = [],
+        $condition = [])
     {
         // =[['a','b','c'],['a','b','c']]
         $row1 = new MyRow();
@@ -33,6 +35,7 @@ class Table extends Component
             $contentDBArray :
             [$row1, $row2] ;
         $this->toggleColumns = $toggleColumnsArray;
+        $this->condition = $condition;
     }
 
     /**
@@ -45,9 +48,28 @@ class Table extends Component
         return view('components.table');
     }
 
-    public function where($condition = true){
-        return $condition;
+    public function where($thisRow){
+        if (count($this->condition) == 0) {
+            return true;
+        }
+        if (count($this->condition) > 1) {
+            $this->contentDBArray = [];
+            return false;
+        }
+        // if 1
+        $specifiedColumn = array_keys($this->condition)[0];
+        if (!property_exists($thisRow, $specifiedColumn)) {
+            $this->contentDBArray = [];
+            return false;
+        }
+
+        $correctValue = $this->condition[$specifiedColumn];
+        if ($thisRow->$specifiedColumn == $correctValue) {
+            return true;
+        }
+        return false;
     }
+    
     public function findID($row)
     {
         foreach ($row as $key => $value) {

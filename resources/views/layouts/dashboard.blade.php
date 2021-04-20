@@ -42,6 +42,7 @@
         </ul>
 
     </nav>
+    {{-- TODO: Cuando la pantalla se achica verticalmente, ya no funciona el navbar --}}
     <main class="dash-main">
         {{-- <div class="dash-content"> --}}
         @section('content')

@@ -21,7 +21,7 @@
         <tbody >
 
             @foreach ($contentDBArray as $row)
-            @if ($where())
+            @if ($where($row))
             <tr class="x-table__item" id={{$findID($row)}}>
                 @foreach ($row as $colName => $col)
                 @if ($isToggleColumn($colName))
